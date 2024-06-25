@@ -3,13 +3,13 @@ namespace AisParser.Messages
     public abstract class PositionReportClassAMessageBase : AisMessage
     {
         public NavigationStatus NavigationStatus { get; set; }
-        public int? RateOfTurn { get; set; }
+        public int RateOfTurn { get; set; }
         public double SpeedOverGround { get; set; }
         public PositionAccuracy PositionAccuracy { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
         public double CourseOverGround { get; set; }
-        public uint? TrueHeading { get; set; }
+        public uint TrueHeading { get; set; }
         public uint Timestamp { get; set; }
         public ManeuverIndicator ManeuverIndicator { get; set; }
         public uint Spare { get; set; }

@@ -22,7 +22,7 @@ namespace AisParserTests.MessagesTests
             message.Longitude.ShouldBe(-71.03836333333334d, 0.000001d);
             message.Latitude.ShouldBe(42.34964333333333d, 0.000001d);
             message.CourseOverGround.ShouldBe(131.8);
-            message.TrueHeading.ShouldBeNull();
+            message.TrueHeading.ShouldBe(511u);
             message.Timestamp.ShouldBe(1u);
             message.IsCsUnit.ShouldBeTrue();
             message.HasDisplay.ShouldBeFalse();

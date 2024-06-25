@@ -68,13 +68,13 @@ namespace AisParserTests.MessagesTests
             message.Repeat.ShouldBe(0u);
             message.Mmsi.ShouldBe(366985620u);
             message.NavigationStatus.ShouldBe(NavigationStatus.NotDefined);
-            message.RateOfTurn.ShouldBeNull();
+            message.RateOfTurn.ShouldBe(-128);
             message.SpeedOverGround.ShouldBe(0);
             message.PositionAccuracy.ShouldBe(PositionAccuracy.High);
             message.Longitude.ShouldBe(-91.23304d, 0.000001d);
             message.Latitude.ShouldBe(29.672108333333334d, 0.000001d);
             message.CourseOverGround.ShouldBe(3.9);
-            message.TrueHeading.ShouldBeNull();
+            message.TrueHeading.ShouldBe(511u);
             message.Timestamp.ShouldBe(59u);
             message.ManeuverIndicator.ShouldBe(ManeuverIndicator.NotAvailable);
             message.Spare.ShouldBe(0u);
@@ -93,13 +93,13 @@ namespace AisParserTests.MessagesTests
             message.Repeat.ShouldBe(0u);
             message.Mmsi.ShouldBe(367098660u);
             message.NavigationStatus.ShouldBe(NavigationStatus.UnderWayUsingEngine);
-            message.RateOfTurn.ShouldBeNull();
+            message.RateOfTurn.ShouldBe(-128);
             message.SpeedOverGround.ShouldBe(0);
             message.PositionAccuracy.ShouldBe(PositionAccuracy.Low);
             message.Longitude.ShouldBe(-93.88475d, 0.000001d);
             message.Latitude.ShouldBe(29.920511666666666d, 0.000001d);
             message.CourseOverGround.ShouldBe(217.5);
-            message.TrueHeading.ShouldBeNull();
+            message.TrueHeading.ShouldBe(511u);
             message.Timestamp.ShouldBe(0u);
             message.ManeuverIndicator.ShouldBe(ManeuverIndicator.NotAvailable);
             message.Spare.ShouldBe(0u);
@@ -118,13 +118,13 @@ namespace AisParserTests.MessagesTests
             message.Repeat.ShouldBe(0u);
             message.Mmsi.ShouldBe(366888040u);
             message.NavigationStatus.ShouldBe(NavigationStatus.UnderWayUsingEngine);
-            message.RateOfTurn.ShouldBeNull();
+            message.RateOfTurn.ShouldBe(-128);
             message.SpeedOverGround.ShouldBe(0.1);
             message.PositionAccuracy.ShouldBe(PositionAccuracy.Low);
             message.Longitude.ShouldBe(-146.29038333333332d, 0.000001d);
             message.Latitude.ShouldBe(61.114133333333335d, 0.000001d);
             message.CourseOverGround.ShouldBe(181);
-            message.TrueHeading.ShouldBeNull();
+            message.TrueHeading.ShouldBe(511u);
             message.Timestamp.ShouldBe(0u);
             message.ManeuverIndicator.ShouldBe(ManeuverIndicator.NotAvailable);
             message.Spare.ShouldBe(0u);
@@ -155,6 +155,16 @@ namespace AisParserTests.MessagesTests
             message.Spare.ShouldBe(1u);
             message.Raim.ShouldBe(Raim.InUse);
             message.RadioStatus.ShouldBe(330923u);
+        }
+
+        [Fact]
+        public void Default_values_should_not_be_null()
+        {
+            const string sentence = "!AIVDM,1,1,,A,100000>P00P6GBtMI1<v4?wj0@Qn,0*78";
+            var message = Parser.Parse(sentence) as PositionReportClassAMessage;
+            message.TrueHeading.ShouldBe(511u);
+            message.RateOfTurn.ShouldBe(-128);
+            message.CourseOverGround.ShouldBe(360);
         }
     }
 }

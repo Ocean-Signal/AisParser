@@ -89,16 +89,16 @@ namespace AisParser
             return result;
         }
 
-        public int? ReadRateOfTurn(int startIndex, int length)
+        public int ReadRateOfTurn(int startIndex, int length)
         {
             var rateOfTurn = ReadInt(startIndex, length);
-            return rateOfTurn == -128 ? null : new int?(rateOfTurn);
+            return rateOfTurn;
         }
 
-        public uint? ReadTrueHeading(int startIndex, int length)
+        public uint ReadTrueHeading(int startIndex, int length)
         {
             var trueHeading = ReadUInt(startIndex, length);
-            return trueHeading == 511 ? null : new uint?(trueHeading);
+            return trueHeading;
         }
 
         public double ReadLongitude(int startIndex, int length)
