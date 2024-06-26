@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35017.193
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{07862239-CCAA-4EF5-8868-723291686842}"
 EndProject
@@ -10,6 +10,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{07BA16C3-7561-4FEE-9806-566132A85AC3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AisParserTests", "test\AisParserTests\AisParserTests.csproj", "{1AC32C57-6BCF-49F1-B996-D681F9DE145F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{DD7AFEE5-3E22-41A2-BA11-8CF3A28D57E9}"
+	ProjectSection(SolutionItems) = preProject
+		assets\OSL.AisParser.pdn = assets\OSL.AisParser.pdn
+		assets\OSL.AisParser.png = assets\OSL.AisParser.png
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,21 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>C# decoder for Automatic Identification System (AIS) for tracking ships and decoding maritime information</Description>
-    <Copyright>Copyright Chris Richards</Copyright>
+    <Description>C# decoder for Automatic Identification System (AIS) for tracking ships and decoding maritime information. Forked from an open-source project (MIT license) by Chris Richards and modified for OSL use.</Description>
+    <Copyright>Original code Copyright Chris Richards, modifications copyright Ocean Signal Limited</Copyright>
     <VersionPrefix>1.0.0</VersionPrefix>
-    <Authors>Chris Richards</Authors>
+    <Authors>Chris Richards, Tim Long</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>7.3</LangVersion>
     <AssemblyName>AisParser</AssemblyName>
-    <PackageId>AisParser</PackageId>
-    <PackageTags></PackageTags>
+    <PackageId>OSL.AisParser</PackageId>
+    <PackageTags>AIS;parser</PackageTags>
     <PackageProjectUrl>https://github.com/yellowfeather/AisParser</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/yellowfeather/AisParser</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Ocean-Signal/AisParser</RepositoryUrl>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Version>1.0.0</Version>
+    <Version>0.0.0-unversioned</Version>
+    <Title>A simple AIS message parser</Title>
+    <Company>Ocean Signal</Company>
+    <PackageIcon>OSL.AisParser.png</PackageIcon>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\OSL.AisParser.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>
